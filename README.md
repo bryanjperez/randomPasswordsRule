@@ -9,6 +9,9 @@ In this assignment, I was tasked with creating a random password generator out o
 This project began with the assignment of variables (outside and inside of the functions) as well as adding necessary querySelector and eventListener to the generate button.
 
 Link to deployed application: 
+
+https://bryanjperez.github.io/randomPasswordsRule/
+
 The following screenshots shows the working application both before and after a random password is generated:
 <img width="1440" alt="Screen Shot 2021-05-08 at 7 05 45 PM" src="https://user-images.githubusercontent.com/79334697/117555822-72732680-b030-11eb-983a-313cfbf9dfaf.png">
 <img width="1401" alt="Screen Shot 2021-05-08 at 7 20 54 PM" src="https://user-images.githubusercontent.com/79334697/117556017-8881e680-b032-11eb-91f5-63f125eb71d3.png">
