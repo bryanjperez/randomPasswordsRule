@@ -1,82 +1,83 @@
-
-// Assignment code here
+// Variable assignments
 
 var upper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
 var lower = ["abcdefghijklmnopqrstuvwxyz"]
-var char = ["±!@#$%^&*()_+-=§£™¡¢∞§¶•ªº–≠"]
 var numb = ["1234567890"]
+var char = ["±!@#$%^&*()_+-=§£™¡¢∞§¶•ªº–≠"]
 var passwordCheck = ""
 
-function check() {
-    var lengthCheck = prompt("How many characters do you want?");
-    if (lengthCheck <= 128 && lengthCheck >= 8) {
-        alert("Please choose password parameters from the next 4 prompts");
-        passLength = parseInt(lengthCheck);
+//function code -- checkPassword() to confirm password meets assignment requirements
+// 1. prompt to confirm length meets requirements
+// 2. if yes, then prompts for remaining pw options
+// 3. if user selects pw that's too short/long, 'else if' alert to correct
 
-        upperCheck = confirm("Do you want uppercase letters?");
+function checkPassword() {
+    var checkLength = prompt("How many characters do you want?");
+    if (checkLength <= 128 && checkLength >= 8) {
+        alert("Please select OK or CANCEL in the following four prompts");
+        //parseInt returns number value to passLength
+        passLength = parseInt(checkLength);
 
-        if (upperCheck) {
+        uppercaseCheck = confirm("Do you want uppercase letters?");
+
+        if (uppercaseCheck) {
             passwordCheck = passwordCheck + upper
 
         }
         else {
         }
 
-        lowerCheck = confirm("Do you want lowercase letters?");
+        lowercaseCheck = confirm("Do you want lowercase letters?");
 
-        if (lowerCheck) {
+        if (lowercaseCheck) {
             passwordCheck = passwordCheck + lower
 
         } else {
         }
 
-        numbCheck = confirm("Do you want numbers?");
+        numberCheck = confirm("Do you want numbers?");
 
-        if (numbCheck) {
+        if (numberCheck) {
             passwordCheck = passwordCheck + numb
 
         } else {
         }
 
-        charCheck = confirm("Do you want special characters?");
+        chararacterCheck = confirm("Do you want special characters?");
 
-        if (charCheck) {
+        if (chararacterCheck) {
             passwordCheck = passwordCheck + char
 
         } else {
         }
-
-    } else if (lengthCheck < 8 || lengthCheck > 128) {
+        //else if statement triggers if user doesn't select correct length criteria. 
+        //Prevents user from going to second prompt
+    } else if (checkLength < 8 || checkLength > 128) {
 
         alert("Password must be between 8 and 128 characters");
 
-        check();
+        checkPassword();
     }
 }
 
+//function to generate random password
+//var passwordEnd = empty string to reset password return
 
-/*check();
-console.log(passwordCheck);
-console.log(parseInt(passLength));
-var passEnd = ""*/
-
-function randomGen() {
-    check();
+function randomPassword() {
+    checkPassword();
+    //password text area -- id selector used to insert password into text box
     var passwordText = document.querySelector("#password");
-    var passEnd = "";
+    var passwordEnd = "";
     for (var i = 0; i < passLength; i++) {
-        passEnd += passwordCheck[Math.floor(Math.random() * passwordCheck.length)];
+        passwordEnd += passwordCheck[Math.floor(Math.random() * passwordCheck.length)];
     }
-
+    //final password on screen
     passwordText.value = passEnd;
 }
-// Get references to the #generate element
+// generate password button and event listener
 
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-// Add event listener to generate button
-
-generateBtn.addEventListener("click", randomGen);
+generateBtn.addEventListener("click", randomPassword);
 
 
