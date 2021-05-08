@@ -3,7 +3,7 @@
 In this assignment, I was tasked with creating a random password generator out of JavaScript. The following acceptance criteria was required for completion of this task:
 
 * Click button to generate password
-* Create a series of four prompts to set parameters for the randomly generated password, incuding length, upper/lowercase, special characters, and numbers
+* Create a series of four prompts to set parameters for the randomly generated password incuding length, upper/lowercase, special characters, and numbers
 * Upon all prompts being answered, random password appears in text box
 
 This project began with the assignment of variables (outside and inside of the functions) as well as adding necessary querySelector and eventListener to the generate button.
